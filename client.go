@@ -41,7 +41,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Anchore Enterprise Feeds API v0.0.1
+// APIClient manages communication with the Nextlinux Enterprise Feeds API v0.0.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -158,13 +158,12 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
-
 // callAPI do the request.
 func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 	if c.cfg.Debug {
-	        dump, err := httputil.DumpRequestOut(request, true)
+		dump, err := httputil.DumpRequestOut(request, true)
 		if err != nil {
-		        return nil, err
+			return nil, err
 		}
 		log.Printf("\n%s\n", string(dump))
 	}

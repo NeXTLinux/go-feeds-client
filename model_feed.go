@@ -10,7 +10,7 @@
 
 package openapi
 
-// Feed A source of data from the anchore service composed of groups each with its own data series
+// Feed A source of data from the nextlinux service composed of groups each with its own data series
 type Feed struct {
 	// Name of the feed.
 	Name string `json:"name,omitempty"`

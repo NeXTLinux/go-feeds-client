@@ -23,7 +23,7 @@ paths:
         "200":
           content: {}
           description: Version check response
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
   /health:
     get:
       description: Health check, returns 200 and no body if service is running
@@ -32,8 +32,8 @@ paths:
         "200":
           content: {}
           description: Empty body on success
-      x-swagger-router-controller: anchore_engine.apis.common
-      x-anchore-authz-action: None
+      x-swagger-router-controller: nextlinux_engine.apis.common
+      x-nextlinux-authz-action: None
   /version:
     get:
       description: Returns the version object for the service, including db schema
@@ -46,8 +46,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceVersion'
           description: Version object describing version state
-      x-swagger-router-controller: anchore_enterprise.common.apis
-      x-anchore-authz-action: None
+      x-swagger-router-controller: nextlinux_enterprise.common.apis
+      x-nextlinux-authz-action: None
   /feeds:
     get:
       operationId: list_feeds
@@ -64,7 +64,7 @@ paths:
         "500":
           content: {}
           description: 500 InternalError
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
   /feeds/{feed}:
     get:
       operationId: list_feed_groups
@@ -87,7 +87,7 @@ paths:
         "500":
           content: {}
           description: 500 InternalError
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
   /feeds/{feed}/{group}:
     get:
       operationId: get_feed_group_data
@@ -123,7 +123,7 @@ paths:
         "500":
           content: {}
           description: 500 InternalError
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
   /tasks:
     get:
       operationId: get_tasks
@@ -151,7 +151,7 @@ paths:
         "500":
           content: {}
           description: 500 InternalError
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
   /tasks/{task_id}:
     get:
       operationId: get_task
@@ -174,7 +174,7 @@ paths:
         "500":
           content: {}
           description: 500 InternalError
-      x-swagger-router-controller: anchore_enterprise.services.feeds.api.controllers.default_controller
+      x-swagger-router-controller: nextlinux_enterprise.services.feeds.api.controllers.default_controller
 components:
   schemas:
     FeedListing:
@@ -241,7 +241,7 @@ components:
           type: string
       type: object
     Feed:
-      description: A source of data from the anchore service composed of groups each
+      description: A source of data from the nextlinux service composed of groups each
         with its own data series
       example:
         name: name
