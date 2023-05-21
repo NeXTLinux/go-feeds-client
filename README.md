@@ -65,5 +65,5 @@ Class | Method | HTTP request | Description
 
 ## Author
 
-dev@anchore.com
+dev@next-linux.systems
 
